@@ -44,13 +44,13 @@ void getContentText(FILE *f1,char*text){
 
 typedef struct canal{
     char title[700];
-    char description[700];
+    char description[500];
     char link[200];
 }canal;
 
 typedef struct noticia{
     char title[700];
-    char description[700];
+    char description[500];
     char link[200];
     char data[75];
 }noticia;
@@ -123,10 +123,10 @@ int main(){
         }
         if((strcmp(tag, pubDate) == 0) && (foundTag == 1)){
             getContentText(f1,n.data);
-            foundTag = 0; 
+            foundTag = 0;
         }
     }
-    
+
     fprintf(f2,"\n</body>\n");
     fprintf(f2,"\n</html>\n");
 
